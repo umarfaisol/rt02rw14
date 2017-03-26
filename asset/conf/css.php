@@ -1,11 +1,15 @@
+<?php
+$oyot = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+?>
+
 <!-- Bootstrap 3.3.2 -->
-<link href="/asset/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $oyot; ?>/asset/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
 <!-- Theme style -->
-<link href="/asset/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $oyot; ?>/asset/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
 <!-- AdminLTE Skins. Choose a skin from the css/skins
      folder instead of downloading all of them to reduce the load. -->
-<link href="/asset/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $oyot; ?>/asset/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -15,10 +19,10 @@
 <![endif]-->
 
 <!-- logo icon -->
-<link rel="shortcut icon" href="/asset/dist/img/people.png" />
+<link rel="shortcut icon" href="<?php echo $oyot; ?>/asset/dist/img/people.png" />
 
 <!-- datepicker -->
-<link href="/asset/plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo $oyot; ?>/asset/plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
 
 <!-- extjs -->
-<link rel="stylesheet" type="text/css" href="/asset/extjs/resources/css/ext-all.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo $oyot; ?>/asset/extjs/resources/css/ext-all.css" />
