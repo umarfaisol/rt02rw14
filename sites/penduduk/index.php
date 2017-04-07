@@ -97,6 +97,15 @@ include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/conf/import.php");
         else if ($action == "tambah") {
             include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/sites/penduduk/dsp_tambah.php");
         }
+        else if ($action == "simpan") {
+            include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/sites/penduduk/action_simpan_tambah.php");
+        }
+        else if ($action == "detail") {
+            include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/sites/penduduk/dsp_detail_penduduk.php");
+        }
+        else if ($action == "hapus") {
+            include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/sites/penduduk/action_hapus.php");
+        }
         ?>
 
         </section><!-- /.content -->

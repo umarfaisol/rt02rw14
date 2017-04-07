@@ -1,9 +1,13 @@
+<?php
+$path = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+?>
+
 <script type="text/javascript">
 var pindah = function() {
     var ktp = document.getElementById("status_ktp");
     var status_ktp = ktp.options[ktp.selectedIndex].value;
 
-    window.location = "<?php echo $_SERVER["CONTEXT_DOCUMENT_ROOT"]; ?>/sites/penduduk/?status_ktp=" + status_ktp;
+    window.location = "<?php echo $path; ?>/sites/penduduk/?status_ktp=" + status_ktp;
 };
 
 var konfirmHapus = function(url) {
@@ -38,11 +42,11 @@ if ($status_ktp == "") {
     </div>
 
     <?php
-    $tambah = $_SERVER["CONTEXT_DOCUMENT_ROOT"]."/sites/penduduk/?action=tambah";
+    $tambah = $path."/sites/penduduk/?action=tambah";
     ?>
     <!-- menu -->
     <div style="float: left; padding-left: 12px;">
-        <a href="<?php echo tambah; ?>" class="btn btn-success" title="Tambah"><span class="glyphicon glyphicon-plus"></span></a>
+        <a href="<?php echo $tambah; ?>" class="btn btn-success" title="Tambah"><span class="glyphicon glyphicon-plus"></span></a>
     </div>
 
     <div style="float: right; padding-right: 12px;">
@@ -70,6 +74,13 @@ if ($status_ktp == "") {
                 $i = 0;
                 foreach($rs as $row) {
                     $i++;
+                    if ($row["status_ktp"] == "0") {
+                        $displayStatusKtp = "<span class='label label-warning'><span class='glyphicon glyphicon-remove'></span> Domisili</span>";
+                    }
+                    else {
+                        $displayStatusKtp = "<span class='label label-success'><span class='glyphicon glyphicon-ok'></span> KTP GPR</span>";
+                    }
+
                     ?>
                     <tr>
                         <?php
@@ -77,8 +88,18 @@ if ($status_ktp == "") {
                         echo "<td>". $row["nik"] . "</td>";
                         echo "<td>". $row["nama_lengkap"] . "</td>";
                         echo "<td>". $row["blok"] . "</td>";
-                        echo "<td>". $row["ktp"] . "</td>";
-                        echo "<td>"."</td>";
+                        echo "<td>". $displayStatusKtp . "</td>";
+                        echo "<td>";
+
+                        $act = $path."/sites/penduduk/?action=detail&id_penduduk=".$row["id_penduduk"];
+                        $remove = $path."/sites/penduduk/?action=hapus&id_penduduk=".$row["id_penduduk"];
+                        ?>
+
+                        <a class="btn btn-primary" href="<?php echo $act; ?>" title="Lihat detail"><span class="glyphicon glyphicon-tasks"></span></a>
+                        <a class="btn btn-danger" href="#" onclick="konfirmHapus('<?php echo $remove ?>')" title="hapus data penduduk!!!"><span class="glyphicon glyphicon-remove"></span></a>
+
+                        <?php
+                        echo "</td>";
                         ?>
                     </tr>
                 <?php

@@ -3,7 +3,8 @@ $path = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"].":".$_SERVER["S
 $p = new Penduduk();
 $id = $_GET["id_penduduk"];
 $data = $p->getPendudukById($id);
-print_r($data);
+$pend = $data[0];
+/*print_r($data);*/
 ?>
 <div class="box">
     <div class="box-header with-border">
@@ -26,17 +27,17 @@ print_r($data);
             <tr>
                  <td style="width: 12%;">Nama</td>
                  <td style="width: 5px;">:</td>
-                 <td><?php echo $data["nama_lengkap"]; ?></td>
+                 <td><?php echo $pend["nama_lengkap"]; ?></td>
             </tr>
             <tr>
                  <td style="width: 12%;">Tempat Lahir</td>
                  <td style="width: 5px;">:</td>
-                 <td><?php echo $data["tempat_lahir"]; ?></td>
+                 <td><?php echo $pend["tempat_lahir"]; ?></td>
             </tr>
             <tr>
                  <td style="width: 15%;">Blok</td>
                  <td style="width: 5px;">:</td>
-                 <td><?php echo $data["blok"]; ?></td>
+                 <td><?php echo $pend["blok"]; ?></td>
             </tr>
         </tbody>
     </table>
