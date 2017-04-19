@@ -1,9 +1,12 @@
 <?php
 class Penduduk {
     /* ambil semua data */
-    public function selectAll() {
+    public function selectAll($filter) {
         $con = new SqliteCon();
-        $sql = "SELECT * FROM penduduk;";
+        $sql = "SELECT * FROM penduduk WHERE (1=1) ";
+        if ($filter != "") {
+            $sql = $sql . " AND ". $filter;
+        }
         $rs = $con->query($sql);
 
         $retVal = array();

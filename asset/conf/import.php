@@ -5,4 +5,6 @@ error_reporting(E_ERROR);
 $sqlitedb = "/asset/db/rt02.db";
 include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/classes/SqliteCon.php");
 include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/classes/Penduduk.php");
+include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/classes/GUID.php");
+include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/classes/JenisBayar.php");
 ?>
