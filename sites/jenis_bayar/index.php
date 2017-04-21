@@ -1,19 +1,17 @@
-<?php
-/*
+<!--
     Document   : home
     Created on : Apr 30, 2016, 10:55:37 PM
     Author     : java
-*/
-?>
+-->
 <?php
-include("asset/conf/import.php");
+include("../../asset/conf/import.php");
 ?>
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Perumahan Graha Permata Residence (GPR) | Dashboard</title>
+    <title> | Data Jenis Bayar | Perumahan Graha Permata Residence (GPR)</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <!-- include css -->
@@ -35,12 +33,11 @@ include("asset/conf/import.php");
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas">
-            <span class="glyphicon glyphicon-leaf"></span>
-            <!--
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-            <span class="icon-bar"></span>-->
+            <span class="icon-bar"></span>
           </a>
 
 
@@ -68,49 +65,40 @@ include("asset/conf/import.php");
       </aside>
 
       <!-- =============================================== -->
-      <!--
+      <%--
       Untuk membuat konten di sini
-      -->
+      --%>
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-          <h1>
-            Dashboard
-          </h1>
+          <h1> Data Jenis Bayar </h1>
 
           <!-- navigasi -->
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Examples</a></li>
-            <li class="active">Blank page</li>
+            <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Jenis Bayar</li>
           </ol>
         </section>
 
         <!-- Main content -->
         <section class="content">
+        <?php
+        $action = (is_null($_GET["action"]) ? "view" : $_POST["action"] );
+        ?>
 
-          <!-- Default box -->
-          <div class="box">
-                <!-- isi dashboard -->
-              <?php
-              /*
-              $server = $_SERVER;
-              print_r($server);
-              /*
-              $dbhandle = new SqliteCon();
-              if ($dbhandle) {
-                  echo "Koneksi sukses";
-              }
-              else {
-                  die ("Error");
-              }
-              */
-
-              include($www["ROOT"]."/sites/dashboard/index.php");
-              ?>
-
-          </div><!-- /.box -->
+        <?php
+        if ($action == "view") {
+            include($www["ROOT"]."/sites/jenis_bayar/dsp_jenis_bayar.php");
+        }
+        else if ($action == "tambah") {
+            include($www["ROOT"]."/sites/jenis_bayar/dsp_tambah.php");
+        }
+        else if ($action == "simpan") {
+            include($www["ROOT"]."/sites/jenis_bayar/action_simpan.php");
+        }
+        ?>
+        <!-- generate isi di sini -->
 
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->

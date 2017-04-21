@@ -8,5 +8,5 @@
     <div class="pull-right hidden-xs">
         <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2016-<?php echo date("Y");?> <a href="http://www.gudangsourcecode.com">Umar Faisol</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2016-<?php echo date("Y");?> <a href="http://www.umarfaisol.com" target="_blank">Umar Faisol</a>.</strong> All rights reserved.
 </footer>

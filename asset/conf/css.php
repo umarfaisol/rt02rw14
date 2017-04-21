@@ -1,5 +1,5 @@
 <?php
-$oyot = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+$oyot = $www["SERVER"];
 ?>
 
 <!-- Bootstrap 3.3.2 -->
