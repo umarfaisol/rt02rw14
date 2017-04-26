@@ -65,9 +65,9 @@ include("../../asset/conf/import.php");
       </aside>
 
       <!-- =============================================== -->
-      <%--
+      <!--
       Untuk membuat konten di sini
-      --%>
+      -->
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -84,7 +84,7 @@ include("../../asset/conf/import.php");
         <!-- Main content -->
         <section class="content">
         <?php
-        $action = (is_null($_GET["action"]) ? "view" : $_POST["action"] );
+        $action = (is_null($_POST["action"]) ? "view" : $_POST["action"] );
         ?>
 
         <?php
@@ -96,6 +96,9 @@ include("../../asset/conf/import.php");
         }
         else if ($action == "simpan") {
             include($www["ROOT"]."/sites/jenis_bayar/action_simpan.php");
+        }
+        else if ($action == "hapus") {
+            include($www["ROOT"]."/sites/jenis_bayar/action_hapus.php");
         }
         ?>
         <!-- generate isi di sini -->

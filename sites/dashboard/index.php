@@ -7,7 +7,27 @@
                   <h3 class="box-title">Area Chart</h3>
                 </div>
                 <div class="box-body chart-responsive">
-                  <div class="chart" id="revenue-chart" style="height: 250px;"></div>
+                  <div class="chart" id="revenue-chart" style="height: 250px;">
+                  <?php
+                  $timezone = date_default_timezone_get();
+                  echo "The current server timezone is: " . $timezone . "<br/>";
+                  $now = new DateTime();
+                  $timestring = $now->format('Y-m-d H:i:s');
+                  echo $timestring;
+                  echo "<br/>";
+                  echo $now->getTimestamp();
+                  echo "<br/>";
+
+                  $d = new DateTime();
+                  $a = $d->createFromFormat("d-m-Y", "24-07-1981");
+                  echo $a->getTimestamp();
+
+                  echo "<br/>";
+                  $uuid = new GUID();
+                  echo $uuid->getGUID();
+                  ?>
+
+                  </div>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
 

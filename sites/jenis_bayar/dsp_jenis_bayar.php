@@ -49,10 +49,15 @@ $filter = "";
                         echo "<td>". $row["nama_jenis"] . "</td>";
                         echo "<td>";
 
-                        $remove = $path."/sites/penduduk/?action=hapus&id_penduduk=".$row["id_penduduk"];
+                        $remove = $path."/sites/jenis_bayar/";
                         ?>
-                        <a class="btn btn-danger" href="<?php echo $remove; ?>" title="hapus data!!!"><span class="glyphicon glyphicon-remove"></span></a>
-
+                        <form method="POST" action="<?php echo $remove; ?>">
+                            <input type="hidden" name="action" value="hapus" />
+                            <input type="hidden" name="id_jenis_bayar" value="<?php echo $row['id_jenis_bayar']; ?>" />
+                            <button type="submit" class="btn btn-danger" title="Hapus!!!">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </form>
                         <?php
                         echo "</td>";
                         ?>

@@ -4,7 +4,7 @@
     Author     : java
 -->
 <?php
-include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/conf/import.php");
+include("../../asset/conf/import.php");
 ?>
 
 <!DOCTYPE html>
@@ -16,12 +16,12 @@ include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/conf/import.php");
 
     <!-- include css -->
     <?php
-    include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/conf/css.php");
+    include($GLOBALS["ROOT"]."/asset/conf/css.php");
     ?>
 
     <!-- include some js -->
     <?php
-    include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/conf/js.php");
+    include($GLOBALS["ROOT"]."/asset/conf/js.php");
     ?>
   </head>
   <body class="skin-blue">
@@ -60,7 +60,7 @@ include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/conf/import.php");
 
           <!-- menu -->
           <?php
-          include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/conf/menu.php");
+          include($GLOBALS["ROOT"]."/asset/conf/menu.php");
           ?>
         </section>
         <!-- /.sidebar -->
@@ -92,19 +92,19 @@ include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/conf/import.php");
 
         <?php
         if ($action == "view") {
-            include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/sites/penduduk/dsp_penduduk.php");
+            include($GLOBALS["ROOT"]."/sites/penduduk/dsp_penduduk.php");
         }
         else if ($action == "tambah") {
-            include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/sites/penduduk/dsp_tambah.php");
+            include($GLOBALS["ROOT"]."/sites/penduduk/dsp_tambah.php");
         }
         else if ($action == "simpan") {
-            include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/sites/penduduk/action_simpan_tambah.php");
+            include($GLOBALS["ROOT"]."/sites/penduduk/action_simpan_tambah.php");
         }
         else if ($action == "detail") {
-            include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/sites/penduduk/dsp_detail_penduduk.php");
+            include($GLOBALS["ROOT"]."/sites/penduduk/dsp_detail_penduduk.php");
         }
         else if ($action == "hapus") {
-            include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/sites/penduduk/action_hapus.php");
+            include($GLOBALS["ROOT"]."/sites/penduduk/action_hapus.php");
         }
         ?>
 
@@ -113,7 +113,7 @@ include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/conf/import.php");
 
       <!-- footer -->
       <?php
-      include($_SERVER["CONTEXT_DOCUMENT_ROOT"]."/asset/conf/footer.php");
+      include($GLOBALS["ROOT"]."/asset/conf/footer.php");
       ?>
     </div><!-- ./wrapper -->
   </body>
