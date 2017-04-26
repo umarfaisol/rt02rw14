@@ -2,8 +2,8 @@
 /*String db = request.getServletContext().getRealPath("/asset/db/rt02.accdb");*/
 /*error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);*/
 error_reporting(E_ERROR);
-$GLOBALS["ROOT"] = "D:/DATA/UMAR/Proyek/RT02-php";
-$GLOBALS["SERVER"] = "http://rt02rw14.local";
+$GLOBALS["ROOT"] = "/home/u837302425/public_html";
+$GLOBALS["SERVER"] = "http://rt02rw14.pe.hu";
 
 $www = array();
 $www["ROOT"] = $GLOBALS["ROOT"];
