@@ -1,5 +1,5 @@
 <?php
-$path = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+$path = $GLOBALS["SERVER"];
 ?>
 
 <script type="text/javascript">
@@ -13,7 +13,7 @@ var pindah = function() {
 var konfirmHapus = function(url) {
     Ext.Msg.show({
         title: "Konfirmasi?",
-        msg: "Penghapusan data penduduk otomatis menghapus semua. Anda yakin ingin menghapus?",
+        msg: "Penghapusan data penduduk otomatis menghapus semua data terkait penduduk tersebut!<br/>Anda yakin ingin menghapus?",
         buttons: Ext.Msg.YESNO,
         fn: function(buttonId) {
             if (buttonId == "yes") {
@@ -30,6 +30,10 @@ $pend = new Penduduk();
 $status_ktp = $_GET["status_ktp"];
 if ($status_ktp == "") {
     $status_ktp = "2";
+}
+$filter = "status_ktp=".$status_ktp;
+if ($status_ktp == "2") {
+    $filter = "";
 }
 ?>
 
@@ -70,7 +74,7 @@ if ($status_ktp == "") {
             <!-- data penduduk -->
             <tbody>
                 <?php
-                $rs = $pend->selectAll();
+                $rs = $pend->selectAll($filter);
                 $i = 0;
                 foreach($rs as $row) {
                     $i++;

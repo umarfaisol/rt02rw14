@@ -1,8 +1,8 @@
 <?php
-$path = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+$path = $GLOBALS["SERVER"];
 ?>
 
-<form role="form" action="/sites/penduduk">
+<form role="form" action="/sites/penduduk" method="GET">
     <input type="hidden" name="action" value="simpan" />
     <input type="hidden" name="jenis" value="tambah" />
 
@@ -69,6 +69,6 @@ $path = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"].":".$_SERVER["S
 </form>
 <script type="text/javascript">
 $(".datepicker").datepicker({
-    format: "dd/mm/yyyy"
+    format: "dd-mm-yyyy"
 });
 </script>

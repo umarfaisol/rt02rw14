@@ -1,5 +1,5 @@
 <?php
-$path = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+$path = $GLOBALS["SERVER"];
 $p = new Penduduk();
 $id = $_GET["id_penduduk"];
 $hasil = $p->hapusPendudukById($id);

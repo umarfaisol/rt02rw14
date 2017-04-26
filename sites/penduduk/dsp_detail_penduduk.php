@@ -1,5 +1,5 @@
 <?php
-$path = $_SERVER["REQUEST_SCHEME"]."://".$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
+$path = $GLOBALS["SERVER"];
 $p = new Penduduk();
 $id = $_GET["id_penduduk"];
 $data = $p->getPendudukById($id);
@@ -33,6 +33,11 @@ $pend = $data[0];
                  <td style="width: 12%;">Tempat Lahir</td>
                  <td style="width: 5px;">:</td>
                  <td><?php echo $pend["tempat_lahir"]; ?></td>
+            </tr>
+            <tr>
+                 <td style="width: 12%;">Tanggal Lahir</td>
+                 <td style="width: 5px;">:</td>
+                 <td><?php echo date("Y-m-d", $pend["tanggal_lahir"]); ?></td>
             </tr>
             <tr>
                  <td style="width: 15%;">Blok</td>
