@@ -34,10 +34,13 @@ include("../../asset/conf/import.php");
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="glyphicon glyphicon-leaf"></span>
+            <!--
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
+        -->
           </a>
 
 
@@ -83,12 +86,20 @@ include("../../asset/conf/import.php");
 
         <!-- Main content -->
         <section class="content">
+            <?php
+            $action = (is_null($_POST["action"]) ? "view" : $_POST["action"] );
 
+            if ($action == "view") {
+                include($www["ROOT"]."/sites/pembayaran/dsp_bagan_pembayaran.php");
+            }
+            ?>
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 
-      <%-- footer --%>
-      <%@include file="/asset/conf/footer.jsp" %>
+      <!-- footer -->
+      <?php
+      include($www["ROOT"]."/asset/conf/footer.php");
+      ?>
     </div><!-- ./wrapper -->
   </body>
 </html>
