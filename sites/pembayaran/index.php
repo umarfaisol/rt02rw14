@@ -5,6 +5,7 @@
 -->
 <?php
 include("../../asset/conf/import.php");
+$path = $www["SERVER"];
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +30,7 @@ include("../../asset/conf/import.php");
     <div class="wrapper">
 
       <header class="main-header">
-          <a href="/" class="logo"><b>RT 002 / RW 014</b></a>
+          <a href="<?php echo $path; ?>" class="logo"><b>RT 002 / RW 014</b></a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
@@ -79,7 +80,7 @@ include("../../asset/conf/import.php");
 
           <!-- navigasi -->
           <ol class="breadcrumb">
-            <li><a href="<%= path %>/"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="<?php echo $path; ?>"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Pembayaran</li>
           </ol>
         </section>
@@ -88,9 +89,24 @@ include("../../asset/conf/import.php");
         <section class="content">
             <?php
             $action = (is_null($_POST["action"]) ? "view" : $_POST["action"] );
+            $step = $_POST["step"];
 
             if ($action == "view") {
                 include($www["ROOT"]."/sites/pembayaran/dsp_bagan_pembayaran.php");
+            }
+            else if ($action == "tambah") {
+                if ($step == "cari_warga") {
+                    include($www["ROOT"]."/sites/pembayaran/dsp_cari_warga.php");
+                }
+                else if ($step == "action_cari") {
+                    include($www["ROOT"]."/sites/pembayaran/dsp_hasil_cari_warga.php");
+                }
+                else if ($step == "input_bayar") {
+                    include($www["ROOT"]."/sites/pembayaran/dsp_tambah_bayar.php");
+                }
+                else if ($step == "simpan") {
+                    include($www["ROOT"]."/sites/pembayaran/dsp_tambah_bayar.php");
+                }
             }
             ?>
         </section><!-- /.content -->

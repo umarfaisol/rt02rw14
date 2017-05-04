@@ -1,8 +1,4 @@
 <?php
-$path = $www["SERVER"];
-?>
-
-<?php
 $p = new Penduduk();
 $pem = new Pembayaran();
 $bln= array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
@@ -18,13 +14,14 @@ $tahun = 2017;
     </div>
 
     <?php
-    $tambah = $path."/sites/pembayaran/?action=tambah&step=cari_warga&jenis=iuran";
-    $tambahLain = $path."/sites/pembayaran/?action=tambah&step=cari_warga&jenis=iuranLain";
+    $tambah = $path."/sites/pembayaran/";
+    $tambahLain = $path."/sites/pembayaran/?action=tambah&step=cari_warga";
     ?>
     <!-- menu -->
     <div style="float: left; padding-left: 12px;">
         <form method="post" action="<?php echo $tambah; ?>">
             <input type="hidden" name="action" value="tambah"/>
+            <input type="hidden" name="step" value="cari_warga"/>
             <button type="submit" class="btn btn-success" value="Tambah" title="Proses pembayaran pada bulan tertentu!">
                 <span class="glyphicon glyphicon-plus"></span>
             </button>
